@@ -1,0 +1,66 @@
+% !TEX root = ../../AdvaniElmingShaw2020.tex
+
+% \caption{Balancing tests of characteristics, income and tax totals, and income components}
+\scalebox{0.80}{
+\begin{tabular}{llrrrrr}
+  \toprule
+  Years after audit      &            & -5       & -4       & -3       & -2       & -1       \\
+  \midrule
+  \multicolumn{7}{c}{Characteristics}                                                        \\
+  Female                 & Mean       & ~.274    & ~.276    & ~.278    & ~.282    & ~.287    \\
+                         & Difference   & -.006    & -.004    & -.002    & -.001    & -.002    \\
+                         & p-value    & ~.221    & ~.359    & ~.606    & ~.627    & ~.863    \\
+  Age                    & Mean          & 49.2     & 49.3     & 49.3     & 49.4     & 49.5     \\
+                         & Difference & ~.2      & ~.3      & ~.3      & ~.2      & ~.2      \\
+                         & p-value          & ~.756    & ~.586    & ~.390    & ~.610    & ~.057    \\
+  In London or SE        & Mean       & ~.333    & ~.334    & ~.335    & ~.333    & ~.331    \\
+                         & Difference & -.006    & ~.001*   & ~.004*   & ~.002    & ~.002    \\
+                         & p-value       & ~.177    & ~.025    & ~.011    & ~.281    & ~.152    \\
+  Has tax agent          & Mean       & ~.628    & ~.614    & ~.603    & ~.589    & ~.573    \\
+                         & Difference & ~.000    & ~.002    & ~.001    & ~.003    & ~.005    \\
+                             & p-value    & ~.547    & ~.508    & ~.405    & ~.396    & ~.412    \\
+  Survives               & Mean       & ~.624    & ~.669    & ~.728    & ~.803    & ~.892    \\
+                                   & Difference & ~.032*** & ~.039*** & ~.047*** & ~.050*** & ~.050*** \\
+                         & p-value    & ~.000    & ~.000    & ~.000    & ~.000    & ~.000    \\
+  \multicolumn{7}{c}{\rule{0pt}{3ex}Income and tax totals}                                   \\
+  Total taxable income   & Mean       & 35,075   & 34,670   & 34,030   & 32,912   & 31,755   \\
+                                & Difference & 881          & 492      & 403*     & 1,051*   & 1,095*   \\
+                         & p-value    & ~.374    & ~.157    & ~.028    & ~.012    & ~.012    \\
+  Total tax              & Mean       & 9,646    & 9,539    & 9,321    & 8,979    & 8,635    \\
+                         & Difference & 260      & 63       & 82       & 310      & 337*     \\
+                         & p-value    & ~.539    & ~.303    & ~.055    & ~.064    & ~.027    \\
+  \multicolumn{7}{c}{\rule{0pt}{3ex}Income components}                                       \\
+  Employment             & Mean       & 22,508   & 22,534   & 22,266   & 21,708   & 21,145   \\
+                         & Difference & -31      & -136     & 180*     & 909**    & 721*     \\
+                         & p-value    & ~.162    & ~.371    & ~.028    & ~.006    & ~.027    \\
+  Self employment        & Mean       & 6,546    & 6,379    & 6,200    & 5,950    & 5,581    \\
+                         & Difference & 356      & 328      & 173      & 99       & 200*     \\
+                         & p-value    & ~.151    & ~.174    & ~.311    & ~.106    & ~.025    \\
+  Interest and dividends & Mean       & 4,007    & 3,905    & 3,895    & 3,759    & 3,645    \\
+                         & Difference & -36      & 208      & 18       & 63       & 112      \\
+                         & p-value    & ~.767    & ~.432    & ~.700    & ~.578    & ~.580    \\
+  Pensions               & Mean       & 3,493    & 3,542    & 3,561    & 3,562    & 3,531    \\
+                         & Difference & 176      & 168      & 128      & 148      & 159      \\
+                         & p-value    & ~.425    & ~.478    & ~.642    & ~.307    & ~.327    \\
+  Property               & Mean       & 869      & 844      & 811      & 769      & 726      \\
+                         & Difference & 18       & -2       & 37       & 47       & 31       \\
+                         & p-value    & ~.813    & ~.952    & ~.576    & ~.498    & ~.134    \\
+  Foreign                & Mean       & 194      & 193      & 194      & 181      & 169      \\
+                         & Difference & 23       & -1       & -5       & -6       & 1        \\
+                         & p-value    & ~.759    & ~.240    & ~.956    & ~.317    & ~.766    \\
+  Trusts and estates     & Mean       & 150      & 145      & 145      & 131      & 123      \\
+                         & Difference & 46       & 17       & 8        & 19       & 8        \\
+                         & p-value    & ~.245    & ~.367    & ~.290    & ~.125    & ~.367    \\
+  Share schemes          & Mean       & 91       & 104      & 68       & 62       & 55       \\
+                         & Difference & 17*      & 24       & 22**     & 11       & -6**     \\
+                         & p-value    & ~.043    & ~.062    & ~.004    & ~.132    & ~.008    \\
+  Other                  & Mean       & 80       & 75       & 76       & 73       & 71       \\
+                         & Difference & -1       & -4       & 0        & 5        & 6        \\
+                         & p-value    & ~.747    & ~.675    & ~.645    & ~.796    & ~.167    \\  
+  \bottomrule
+\end{tabular}
+}
+% \begin{minipage}[t]{\linewidth}\vspace{1ex}
+% \fnote{\textbf{Notes:} `Mean' is the mean outcome in the control (not selected for audit) group across all years. `Difference' is the coefficient on the treatment dummy in a regression of the outcome on a treatment dummy. Treatment dummy equals 1 if taxpayer was selected by HMRC for a random audit. p-values are derived from an F-test that coefficients on interactions between treatment and tax year dummies are all zero in a regression of the outcome of interest on tax year dummies and interactions between treatment and tax year dummies. This is a stronger test than just testing the coefficient on treatment not interacted. Tests for all outcomes other than `survives' are conditional on survives \(= 1\). Monetary values are in 2012 prices. Standard errors are clustered by taxpayer. *~$p<.05$, **~$p<.01$, ***~$p<.001$.
+%  \newline \textbf{Source:} Authors' calculations based on HMRC administrative datasets.}
+% \end{minipage} 

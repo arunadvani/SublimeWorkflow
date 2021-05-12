@@ -1,0 +1,32 @@
+$ cat .gitignore
+
+#can ignore specific files
+Thumbs.db
+**/Thumbs.db
+.Rhistory
+
+Saez*
+
+#can ignore folders
+ARCHIVE/
+
+#can ignore specific file extensions
+*.lyx~
+*.lyx#
+*.bib.bak
+*.aux
+*.log
+!LogFiles/*.log
+*.synctex*
+*.bbl
+*.blg
+*.nav
+*.out
+*.snm
+*.tex.bak
+*.toc
+*.fls
+*.fdb_latexmk
+*~$*
+*.dta
+

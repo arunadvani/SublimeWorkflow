@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+\begin{frame}
+\frametitle{${1:SlideTitle}} \label{${2:<TabFileName>}}
+	\begin{center}
+	\begin{table}[tbp]
+	\begin{threeparttable}
+	\centering
+		\resizebox{\textwidth}{!}{\input{./tables/${2:<TabFileName>}.tex}}
+	\end{threeparttable}
+	\end{table}
+	\end{center}
+\end{frame}
+]]></content>
+	<tabTrigger>framtab</tabTrigger>
+	<scope>text.tex.latex</scope>
+</snippet>

@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+\hyperlink{${1:RefName}}{\color{blue} ${2:ButtonLabel}}
+]]></content>
+	<tabTrigger>link</tabTrigger>
+	<scope>text.tex.latex</scope>
+</snippet>

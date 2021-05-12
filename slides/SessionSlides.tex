@@ -1,0 +1,161 @@
+\documentclass{beamer}
+\definecolor{mid-gray}{gray}{0.6}
+\usetheme{WarwickCAGEIFSSlides}
+\usepackage{Arun_general_slides}
+\AtBeginSection{\frame{\sectionpage}}
+
+%Define all the title things
+\title[Sublime Session]{Sublime Session}
+\author[Advani]{Arun~Advani}
+\institute[Warwick, CAGE \& IFS]{University of Warwick, CAGE Research Centre and Institute for Fiscal Studies}
+\date{12/05/2020}
+
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%% BEGIN DOC %%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%Declare a titlepage slide
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+%%%%%%%%%%%%%
+% INTRO
+%%%%%%%%%%%%%
+
+% USUAL INTRO STRUCTURE
+% \frametitle{Motivation}
+% \frametitle{Questions}
+% \frametitle{Preview}
+% \frametitle{Contribution and Related Lit}
+
+\begin{frame}
+\frametitle{Why sublime} \label{Why sublime}
+	\begin{enumerate}
+		\item Learn one set of shortcuts, rule the world.
+		\item Edit lots of stuff simultaneously.
+		\item Think of a problem, find a package.
+	\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{What can sublime do?} \label{What can sublime do?}
+	\begin{itemize}
+		\item write: plaintext, markdown, LaTeX/Beamer
+		\item code: stata, R, Julia, html/css 
+		\item edit: easy to do repetitive tasks
+		\item notes and todo lists
+		\item ... above is non-exhaustive, but covers lots of my use cases
+	\end{itemize}
+\end{frame}
+
+
+% \begin{frame}
+% \frametitle{Session Plan} \label{Session Plan}
+% 	Best way to see the value of sublime is to use it.
+% 	\begin{enumerate}
+% 		\item create a text file
+% 		\item create a LaTeX article
+% 		\item 
+% 	\end{enumerate}
+% \end{frame}
+
+\begin{frame}
+\frametitle{Getting started} \label{Getting started}
+	\begin{itemize}
+		\item Let's clone the repo: https://github.com/arunadvani/SublimeWorkflow.git
+		\begin{itemize}
+		 	\item Means we can have some fun with git cmd
+		 	\item NOTE, if you edit the path, you can call sublime from here. 
+		 \end{itemize} 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Steps in cloning} \label{Steps in cloning}
+	\begin{itemize}
+		\item \texttt{mkdir}
+		\item \texttt{cd <dir>}
+		\item \texttt{git clone https://github.com/arunadvani/SublimeWorkflow.git}
+		\item \texttt{explorer .}
+		\item \texttt{subl .} [need to edit path first]
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Create a README} \label{Create a README}
+	\begin{itemize}
+		\item I foolishly created a repo without a readme!
+		\item Let's fix that 
+		\begin{itemize}
+			\item can create a readme (markdown)
+			\item and then push it (though for big commits I usu go via git cmd)
+			\item note: let's not all try to push to repo simultaneously!
+		\end{itemize}
+		\item markdown is plaintext, so don't need to install a package. but \texttt{MarkdownEditing} makes it look nicer.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Make a quick LaTeX article} \label{Make a quick LaTeX article}
+	Need \texttt{LaTeXTools} for this one. \texttt{LaTeX Word Count} and \texttt{Text Pastry} also helpful
+	\begin{itemize}
+		\item we'll make a quick list + add many numbers
+		\item and then reorder it
+		\item and sort out some indentation + plus multiedits + copying
+		\item comment out the bibliography before you build
+		\item (can look at some jumping by editing the slides)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Stata} \label{Stata}
+	\begin{itemize}
+		\item my favourite thing.
+		\item You should all already have \texttt{StataEditor}. (can be a pain to set up)
+		\item let's say ``\texttt{Hello, world!}''
+		\item from Stata 17 we can integrate into sublime (and/or notebooks!)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{R} \label{R}
+	\begin{itemize}
+		\item useful to create a separate window for the REPL
+		\begin{itemize}
+			\item we'll need \texttt{Origami} and \texttt{Terminus} for that
+		\end{itemize}
+		\item now can write and run some code 
+		\begin{itemize}
+			\item need \texttt{R-IDE}
+			\item let's say ``\texttt{Hello, world!}'' again
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Editing} \label{Editing}
+	\begin{itemize}
+		\item Let's sort out a LaTeX table
+		\begin{itemize}
+			\item I hate these
+			\item But sublime makes it much easier
+			\item \texttt{AlignTab} is our friend
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Notes and ToDos} \label{Notes and ToDos}
+	\begin{itemize}
+		\item \texttt{PlainNotes} for notes
+		\item \texttt{PlainTasks} for to do list
+	\end{itemize}
+\end{frame}
+
+\end{document}

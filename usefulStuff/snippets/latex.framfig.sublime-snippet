@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+\begin{frame}
+\frametitle{${1:SlideTitle}} \label{${2:<FigFileName>}}
+	\begin{figure}[tbp]
+		\centering
+		\resizebox{${3:<size>}\linewidth}{!}{\includegraphics{./fig/${2:<FigFileName>}.png}}%
+	\end{figure}
+\end{frame}
+]]></content>
+	<tabTrigger>framfig</tabTrigger>
+	<scope>text.tex.latex</scope>
+</snippet>

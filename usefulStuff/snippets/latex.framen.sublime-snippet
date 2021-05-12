@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+\begin{frame}
+\frametitle{${1:SlideTitle}} \label{${1:SlideTitle}}
+	\begin{enumerate}
+		\item ${2}
+	\end{enumerate}
+\end{frame}
+]]></content>
+	<tabTrigger>framen</tabTrigger>
+	<scope>text.tex.latex</scope>
+</snippet>

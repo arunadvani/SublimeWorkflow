@@ -1,0 +1,25 @@
+AlignTab
+Calculate
+FindKeyConflicts
+Git
+Julia
+LaTexTools
+LaTeX Word Count
+LinkSnip (I wrote)
+MarkdownEditing
+MarkdownPreview
+Origami
+Package Control
+PackageResourceViewer
+PlainNotes
+PlainTasks
+PyV8
+Pywin32
+R-IDE
+SendCode
+StataEditor
+Sublimerge
+Terminus
+Text Pastry
+View in Browser
+WordCount

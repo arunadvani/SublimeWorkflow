@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+\begin{figure}[${5:tph}]
+	\centering
+	\caption{\bf ${2}}
+	\includegraphics[width=${4:.9\linewidth}]{fig/${1}.png}
+	\label{fig:${1}}
+	\vspace{6pt}\fnote{\textbf{Notes:} 
+		${3}
+	}
+\end{figure}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>\fig</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.tex.latex</scope>
+</snippet>

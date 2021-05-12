@@ -1,0 +1,230 @@
+[
+	//want a keyboard shortcut for open folder
+	{ "keys": ["shift+backspace"], "command": "right_delete" },
+
+	//want a keyboard shortcut for open folder
+	{ "keys": ["ctrl+shift+o"], "command": "prompt_open_folder" },
+
+	//keyboard shortcut to toggle word wrap
+	{ "keys": ["ctrl+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
+
+	//keyboard shortcut to put text into Title Case
+	{ "keys": ["ctrl+k", "ctrl+t"], "command": "title_case" },
+	{ "keys": ["ctrl+k", "ctrl+shift+t"], "command": "title_case" },
+
+	//I like ctrl+d doing what it does, so going to stop it being overwritten by other packages	
+	{ "keys": ["ctrl+d"], "command": "find_under_expand" },
+	//if in plain tasks I want to mark something as done, use alt+d
+	{ "keys": ["alt+d"], "command": "plain_tasks_complete","context": 
+		[
+			{ "key": "selector", "operator": "equal", "operand": "text.todo" }
+		] 
+	},
+
+	////////////////////
+	//  STATA THINGS  //
+	////////////////////	
+	//map ctrl+b to "do" rather than "run" in Stata
+	{ "keys": ["ctrl+b"],	"command": "stata_execute",	"args": {"Mode": "do"},	"context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "source.stata" }
+		]
+	},
+	{ "keys": ["ctrl+b"],	"command": "stata_execute",	"args": {"Mode": "do", "Selection": "default"},	"context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "source.stata" }
+		]
+	},
+
+
+	////////////////////
+	//  .TODO THINGS  //
+	////////////////////
+  { "keys": ["ctrl+d"], "command": "plain_tasks_complete","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["alt+c"], "command": "plain_tasks_cancel", "context": [{"key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["ctrl+enter"], "command": "plain_tasks_new","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["ctrl+i"], "command": "plain_tasks_new","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["ctrl+shift+enter"], "command": "plain_tasks_new_with_date","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["ctrl+shift+a"], "command": "plain_tasks_archive","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["ctrl+shift+o"], "command": "plain_tasks_archive_org","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["ctrl+shift+u"], "command": "plain_tasks_open_url","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["alt+o"], "command": "plain_tasks_open_link","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["tab"], "command": "plain_task_insert_date", "context":
+    [
+      { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+      { "key": "selector", "operator": "equal", "operand": "text.todo" },
+      { "key": "preceding_text", "operator": "regex_contains", "operand": "(@started|@toggle|@created)(?!\\([\\d\\w,\\.:\\-\/ @]*\\))", "match_all": true }
+    ]
+  },
+  { "keys": ["tab"], "command": "plain_tasks_replace_short_date", "context":
+    [
+      { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+      { "key": "selector", "operator": "equal", "operand": "text.todo" },
+      { "key": "preceding_text", "operator": "regex_contains", "operand": "@due\\([^\\)]+(?!.*?\\))", "match_all": true },
+      { "key": "following_text", "operator": "regex_contains", "operand": "[ \t]*\\)", "match_all": true }
+    ]
+  },
+  { "keys": ["tab"], "command": "plain_tasks_re_calculate_time_for_tasks", "context":
+    [
+      { "key": "selector", "operator": "equal", "operand": "text.todo meta.tag.todo.completed, text.todo meta.tag.todo.cancelled" }
+    ]
+  },
+
+
+
+	////////////////////
+	//  LATEX THINGS  //
+	////////////////////
+	// automatic addition of new \items when hitting Enter in a list environment
+ 	{ "keys": ["enter"], "command": "insert_snippet", "args": {"contents": "\n\\item $0"}, 
+ 	"context":  
+	 	[
+			{"key": "selector", "operator": "equal", "operand": "meta.function.environment.list.latex"},
+			{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true }
+		]
+	},
+
+	// Reassign expand_selection to ctrl+l, ctrl+l
+	{ 	"keys": ["ctrl+l","ctrl+l"], 
+		"context":  [
+			{"key": "selector", "operator": "equal", "operand": "text.tex.latex"}],
+		"command": "expand_selection", "args": {"to": "line"} },
+
+	// Set ctrl+l, ctrl+r to insert \redbf{}
+	{ 	"keys": ["ctrl+l","ctrl+r"], 
+		"context":  [
+			{"key": "selector", "operator": "equal", "operand": "text.tex.latex"}],
+		"command": "insert_snippet", "args": {"contents": "\\redbf{${0:$SELECTION}}"} 
+	},
+
+	// Set ctrl+l, ctrl+f to insert footnote
+	{ 	"keys": ["ctrl+l","ctrl+f"], 
+		"context":  [
+			{"key": "selector", "operator": "equal", "operand": "text.tex.latex"}],
+		"command": "insert_snippet", "args": {"contents": "\\footnote{${0:$SELECTION}}"} 
+	},
+
+	// Set ctrl+l, ctrl+p to insert \citep
+	{ 	"keys": ["ctrl+l","ctrl+p"], 
+		"context":  [
+			{"key": "selector", "operator": "equal", "operand": "text.tex.latex"}],
+		"command": "insert", "args": {"characters": "\\citep"} 
+	},
+
+	// Set ctrl+l, ctrl+3 to insert £
+	{ 	"keys": ["ctrl+l","ctrl+3"], 
+		"context":  [
+			{"key": "selector", "operator": "equal", "operand": "text.tex.latex"}],
+		"command": "insert", "args": {"characters": "\\pounds"} 
+	},
+
+	// Set ctrl+l, ctrl+w to word count
+	{ 	"keys": ["ctrl+l","ctrl+w"], 
+		"context":  [
+			{"key": "selector", "operator": "equal", "operand": "text.tex.latex"}],
+		"command": "texcount"
+	},
+
+
+	// if I only want a blank line, then press Shift+Enter in a list environment
+ 	{ "keys": ["shift+enter"], "command": "insert_snippet", "args": {"contents": "\n"}, 
+ 	"context":  
+	 	[
+			{"key": "selector", "operator": "equal", "operand": "meta.function.environment.list.latex"},
+			{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true }
+		]
+	},
+
+
+	// shift+alt+{up,down} for alt/subscripts with braces
+	{ "keys": ["shift+alt+down"], "command": "insert_snippet", "args": {"contents": "_{$1}$0"}, 
+	"context":  
+		[
+			{"key": "selector", "operator": "equal", "operand": "text.tex.latex string.other.math"},
+			{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true }
+		]
+	},
+
+	{ "keys": ["shift+alt+up"], "command": "insert_snippet", "args": {"contents": "^{$1}$0"}, 
+	"context":  
+		[
+			{"key": "selector", "operator": "equal", "operand": "text.tex.latex string.other.math"},
+			{"key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+			{"key": "selection_empty", "operator": "equal", "operand": true, "match_all": true }
+		]
+	},
+
+	// Add \vspace{.pt} (do this all the time in beamer)
+	{ 	"keys": ["ctrl+l","ctrl+v"], 
+		"context":  [
+			{"key": "selector", "operator": "equal", "operand": "text.tex.latex"}
+		],
+		"command": "insert_snippet", "args": {"contents": "\\vspace{$0pt}"} },
+	
+	// Add \vspace{6pt} (do this all the time in beamer)
+	{ 	"keys": ["ctrl+6"], 
+		"context":  [
+			{"key": "selector", "operator": "equal", "operand": "text.tex.latex"}
+		],
+		"command": "insert_snippet", "args": {"contents": "\\vspace{6pt}"} },
+
+
+	////////////////////////////
+	// for package: CALCULATE //
+	////////////////////////////
+    { "keys": ["ctrl+shift+="], "command": "calculate", "args": {"replace": false} },
+    { "keys": ["ctrl+shift+c"], "command": "calculate", "args": {"replace": true}  },
+
+
+	////////////////////
+	//    TERMINUS    //
+	////////////////////
+    {
+        "keys": ["ctrl+alt+t","t"],
+        "command": "terminus_open",
+    },
+    {
+        "keys": ["ctrl+alt+t","right"],
+        "command": "terminus_open",
+        "args": {
+            "post_window_hooks": [
+                ["carry_file_to_pane", {"direction": "right"}]
+            ]
+        }
+    },
+    {
+        "keys": ["ctrl+alt+t","r"],
+        "command": "terminus_open",
+        "args": {
+            "config_name": "r",
+            "post_window_hooks": [
+                ["carry_file_to_pane", {"direction": "right"}]
+            ]
+        }
+    },
+
+
+	////////////////////
+	//  HTML THINGS   //
+	////////////////////
+	// Set ctrl+l, ctrl+a to insert <a href=""></a>
+	{ 	"keys": ["ctrl+l","ctrl+a"], 
+		"context":  [
+			{"key": "selector", "operator": "equal", "operand": "text.html"}
+		],
+		"command": "insert_snippet", "args": {"name": "Packages/User/snippets/html.link.sublime-snippet"} 
+	},
+
+	{ 	"keys": ["ctrl+l","ctrl+shift+a"], 
+		"context":  [
+			{"key": "selector", "operator": "equal", "operand": "text.html"}
+		],
+		"command": "link_snip" 
+	},
+
+    // { "keys": [ "ctrl+b" ], "operator": "equal", "operand": "text.html", "command": "view_in_browser" },
+
+]

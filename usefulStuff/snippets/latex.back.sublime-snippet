@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+\vfill \hyperlink{${1:RefName}}{\beamerbutton{Back}}
+]]></content>
+	<tabTrigger>back</tabTrigger>
+	<scope>text.tex.latex</scope>
+</snippet>

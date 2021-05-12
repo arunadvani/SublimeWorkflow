@@ -1,0 +1,50 @@
+<snippet>
+	<content><![CDATA[
+\documentclass{beamer}
+\definecolor{mid-gray}{gray}{0.6}
+\usetheme{WarwickCAGEIFSSlides}
+\usepackage{Arun_general_slides}
+\AtBeginSection{\frame{\sectionpage}}
+
+%Define all the title things
+\title[${1:SHORT TITLE}]{${2:FULL TITLE}}
+\subtitle{${3:SUBTITLE}}
+\author[Advani ${4:AND OTHER SHORT AUTHOR(S)}]{Arun~Advani ${5:AND OTHER LONG AUTHOR(S)}}
+\institute[Warwick, CAGE \& IFS]{University of Warwick, CAGE Research Centre and Institute for Fiscal Studies}
+\date{${6:DATE OF PRESENTATION}}
+
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%% BEGIN DOC %%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%Declare a titlepage slide
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+%%%%%%%%%%%%%
+% INTRO
+%%%%%%%%%%%%%
+
+% USUAL INTRO STRUCTURE
+% \frametitle{Motivation}
+% \frametitle{Questions}
+% \frametitle{Preview}
+% \frametitle{Contribution and Related Lit}
+
+\begin{frame}
+\frametitle{${7:START TYPING HERE}}
+${8:TEXT OF FIRST SLIDE}
+
+\end{frame}
+
+
+\end{document}
+]]></content>
+	<tabTrigger>\slides</tabTrigger>
+	<scope>text.tex.latex</scope>
+</snippet>

@@ -1,0 +1,36 @@
+<snippet>
+	<content><![CDATA[
+\begin{figure}
+\centering
+\subcaptionbox[${2:Short Subcaption}]{%
+    ${2}%
+    \label{subfig:${1}%
+}
+[%
+    0.45\textwidth % width of caption
+]%
+{%
+    \includegraphics[width=0.45\textwidth]%
+    {fig/${1}}%
+}%
+\hspace{0.1\textwidth} % seperation
+\subcaptionbox[${4:Short Subcaption}]{%
+    ${4}%
+    \label{subfig:${3}}%
+}
+[%
+    0.45\textwidth % width of caption
+]%
+{%
+    \includegraphics[width=0.45\textwidth]%
+    {fig/${3}}%
+}%
+\caption[${6:Short Caption}]{${6}}
+\label{fig:${5}}
+\end{figure}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>\hsubfig</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.tex.latex</scope>
+</snippet>

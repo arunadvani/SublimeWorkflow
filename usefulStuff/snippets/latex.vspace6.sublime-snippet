@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+\vspace{6pt}
+]]></content>
+	<tabTrigger>vsp6</tabTrigger>
+	<scope>text.tex.latex</scope>
+</snippet>

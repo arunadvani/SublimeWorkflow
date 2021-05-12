@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+\begin{prop} \label{prop:${1}}
+	${2}
+\end{prop}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>\proposition</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.tex.latex</scope>
+</snippet>

@@ -1,0 +1,122 @@
+<snippet>
+	<content><![CDATA[
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="${2}">
+    <meta name="author" content="Arun Advani">
+
+    <title>${2}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../styles/aa.css" rel="stylesheet">
+
+    <!-- Javascript for altmetric badge -->
+    <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+       <div class="">
+          <ul class="nav navbar-nav">
+
+            <li class="active" >
+            <a class="navbar-brand" href="../index.html"> Home  </a> </li>
+
+              <li  > <a href="http://www.wealthtaxcommission.uk"> Wealth Tax Commission </a> </li>
+              
+          </ul>
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <p></p>
+
+    <div class="container">
+      <div class='starter-template'>
+
+        <div class='row'>
+          <!-- <img class="pic-me" src="profile_bw_cropped.jpg"align="left" /> -->
+          <div class='col-md-9'>
+            <h1 class='dTitle'>${2}</h1>
+            <h2 class='dAuthors'>${3}</h2>
+            <h2 class='dWPno'>Wealth and Policy, Working Paper ${1}</h2>
+
+<hr/>
+
+        <div class='row'>
+          <div class='col-md-9'>
+            <h2 class='dDate'>${6:30 Oct 2020}</h2>
+            <h2 class='dSocial'>Share 
+              <a href="https://twitter.com/share?url=https%3A%2F%2Fwealthandpolicy.com%2Fwp%2F${1}&via=arunadvaniecon&lang=en"  title="Share this page on Twitter" target="_blank" onclick="return !window.open(this.href, 'Twitter', 'width=800,height=800')"><img src="../img/twitter.png" alt="Twitter" height="25"></a> 
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwealthandpolicy.com%2Fwp%2F${1}"  title="Share this page on Facebook" target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=800,height=800')"><img src="../img/facebook.png" alt="Facebook" height="25"></a>
+            </h2> 
+          </div>
+        </div>
+      <!-- <i class="fa fa-facebook"></i> -->
+      <!-- <i class="fa fa-twitter"></i> -->
+
+<hr/>
+
+        <div class='row'>
+          <div class='col-md-9'>
+            <div class='dAbstract'>
+              ${4}
+            </div>
+             <p> </p> 
+          </div>
+        </div>
+
+<hr/>
+
+        <div class='row'>
+          <div class='col-md-6'>
+            <div class='dAbstract'>
+              <b>DOI:</b> <a href="https://dx.doi.org/10.47445/${1}">10.47445/${1}</a> </br>
+              <b>Altmetric:</b> <div class="altmetric-embed" data-badge-type="2" data-badge-popover="right" data-doi="10.47445/${1}" /> </div>
+            </div>
+          </div>
+          <div class='col-md-6'>
+            <div class='dAbstract'>
+              <b>Document link</b></br>
+              <a href="./BP${1}_${5}.pdf">Download report</a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <br>
+
+
+
+        <div class='row'>
+
+        </div>
+
+
+
+      </div><!-- /.starter-template -->
+    </div><!-- /.container -->
+
+    <script src="../bootstrap/js/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+  </body>
+
+</html>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wppage</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

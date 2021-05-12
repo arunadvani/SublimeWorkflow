@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+\blueemph{
+	\begin{itemize}
+		\item ${1}
+	\end{itemize}
+}
+]]></content>
+	<tabTrigger>ans</tabTrigger>
+	<scope>text.tex.latex</scope>
+</snippet>
