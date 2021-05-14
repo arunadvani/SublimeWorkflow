@@ -1,0 +1,93 @@
+\ProvidesPackage{beamerthemeWarwickCAGEIFSSlides}
+
+
+\usetheme{Madrid}
+
+
+%remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+%define colors and set beamer colors
+\definecolor{Snow2}{RGB}{238,233,233}
+\definecolor{Green}{rgb}{0.125,.5,0.25}
+\definecolor{standardgreen}{HTML}{248329}
+\definecolor{limegreen}{HTML}{7BAA1E}
+\definecolor{yellowgreen}{HTML}{B1BD05}
+\definecolor{yellow}{HTML}{D2D001}
+\definecolor{darkgrey}{HTML}{728896}
+\definecolor{greengrey}{HTML}{9EAA86}
+
+\usecolortheme[named=limegreen]{structure}
+
+\setbeamercolor{title}{fg=standardgreen}
+\setbeamercolor{frametitle}{fg=white}
+\setbeamercolor{structure}{fg=limegreen}
+\setbeamercolor{structure}{bg=limegreen}
+\setbeamercolor{footer}{bg=limegreen}
+\setbeamercolor{footer}{fg=limegreen}
+\setbeamercolor{subtitle}{fg=black}
+\setbeamercolor{author}{fg=standardgreen}
+
+
+% %logo
+% \pgfdeclareimage[height=0.55cm]{logo}{UCLlogo.png}
+% \logo{\pgfuseimage{logo}}
+
+%margins
+% \setbeamersize{text margin left = 2em}
+\setlength{\leftmargini}{1.05em}
+
+
+%itemized lists
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize/enumerate body begin}{\vspace{4pt}}
+\setbeamertemplate{itemize/enumerate body end}{\vspace{4pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{\vspace{4pt}}
+\setbeamertemplate{itemize/enumerate subbody end}{\vspace{4pt}}
+
+
+%title page
+\setbeamertemplate{title page}
+{
+  \usebeamercolor{standardgreen}
+  \hspace{14pt} \includegraphics[height=1cm]{WarwickLogo_Aubergine.jpg} \hspace{20pt} \includegraphics[height=1cm]{CAGE.png} \hspace{20pt} \includegraphics[height=1cm]{IFS.jpg}  \\
+  \textcolor{limegreen}{\rule{\textwidth}{0.75pt}}
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.5cm,dp=1ex,center]{white}%
+  \end{beamercolorbox}%
+
+  \usebeamerfont{title}\centering{\inserttitle}\par
+  \vspace{4pt}
+  \usebeamerfont{subtitle}\usebeamercolor{subtitle}\centering{\insertsubtitle}\par
+  \bigskip
+  \usebeamerfont{author}\usebeamercolor{author}\centering{\insertauthor}\par
+  \vspace{4pt}
+  \usebeamerfont{institute}\centering{\insertinstitute}\par
+  \vspace{8pt}
+  \usebeamerfont{date}\centering{\insertdate}\par
+  }
+
+
+
+%footline
+\setbeamercolor{section in head/foot 1}{fg=white, bg=standardgreen}
+\setbeamercolor{section in head/foot 2}{fg=white, bg=limegreen!75}
+\setbeamercolor{section in head/foot 3}{fg=white, bg=limegreen}
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot 1}%
+    \usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot 3}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot 2}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother

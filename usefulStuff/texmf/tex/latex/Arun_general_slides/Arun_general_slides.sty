@@ -1,0 +1,134 @@
+\ProvidesPackage{Arun_general_slides}
+
+%a bunch of useful packages I always end up needing.
+\usepackage[english]{babel}
+\usepackage{amsmath}        %
+\usepackage{amssymb}        %
+\usepackage{amsthm}         %lets me \newtheorem below
+\usepackage{amsfonts}       %
+\usepackage{mathrsfs}       %
+\usepackage{tikz}           %
+\usepackage{graphicx}       %
+\usepackage{dsfont}         %
+\usepackage{natbib}         %
+\usepackage{rotating}       %
+\usepackage{enumerate}
+% \usepackage[shortlabels]{enumitem}  %lets me choose the type of symbol used for enumerate items, option shortlabels makes it work like pkg enumerate %SHOULD *NEVER* USE THIS WITH BEAMER - TURNS OUT IT CAUSES ALL MANNER OF PROBLEMS. DON'T DO THIS!!!
+\usepackage{caption}        %can fiddle with table and fig captions
+\usepackage{pdflscape}        %
+\usepackage{bbm}          %blackboard fonts
+\usepackage{multirow}       %
+\usepackage{booktabs,caption}   %
+\usepackage[flushleft]{threeparttable}
+%\usepackage{bm}           %bold fonts for math symb (just type e.g. $\bm{\alpha}$)
+\usepackage{ee}
+\usepackage{lmodern}      %additional fonts, which solve a beamer error
+
+%define some types of "theorem" environment, for any theory sections I write
+\newtheorem{defn}{Definition}
+\newtheorem{prop}{Proposition}
+% \newtheorem{proof}{Proof}
+\newtheorem{pred}{Prediction}
+% \newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{assum}{Assumption}
+\newtheorem{examp}{Example}
+
+%create a single argmax operator, with arguments typeset underneath (the *)
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+%% MORE MATHS %%%
+%probability
+\providecommand{\E}{}
+\renewcommand{\E}[1]{\ensuremath{\mathbb{E} \left[ #1 \right]}}     % expectation
+\providecommand{\V}{}
+\renewcommand{\V}[1]{\ensuremath{\mathbb{V} \left[ #1 \right]}}     % variance
+\providecommand{\P}{}
+\renewcommand{\P}[1]{\ensuremath{\Pr \left( #1 \right)}}        % probability
+\providecommand{\eP}{}
+\renewcommand{\eP}[1]{\ensuremath{\widehat{\Pr} \left( #1 \right)}}   % estimated probability
+\providecommand{\phat}{}
+\renewcommand{\phat}[1]{\ensuremath{\hat{p} \left( #1 \right)}}     % estimated probability, short form
+\providecommand{\indep}{}
+\renewcommand{\indep}{\perp\!\!\!\perp}                 % independent
+\providecommand{\nindep}{}
+\renewcommand{\nindep}{\not\!\perp\!\!\!\perp}              % not independent
+\providecommand{\sigsq}{}
+\renewcommand{\sigsq}{\ensuremath{\sigma^{2}}}              % sigma squared
+%calculus
+\providecommand{\dd}{}
+\renewcommand \dd[1]  { \,\textrm d{#1}                       }       % infintesimal
+\providecommand{\de}{}
+\renewcommand \de[2]  { \frac{\mathrm d{#1}}{\mathrm d{#2}}   }       % first order derivative
+\providecommand{\pd}{}
+\renewcommand \pd[2]  { \frac{\partial{#1}}{\partial{#2}}   }       % first order partial derivative
+\providecommand{\pdn}{}
+\renewcommand \pdn[3]  { \frac{\partial^{#3}{#1}}{\partial{#2}^{#3}}   }    % nth order partial derivative
+\providecommand{\intl}{}
+\renewcommand \intl[4]{ \int\limits_{#1}^{#2}{#3}\dd{#4}      }       % integral with limits
+%linear algebra - covered by inclusion of ee.sty
+%\providecommand{\mX}{}
+%\renewcommand{\mX}{\ensuremath{\mathbf{X}}}                % matrix X
+%\providecommand{\mY}{}
+%\renewcommand{\mY}{\ensuremath{\mathbf{Y}}}              % matrix Y
+%fractions 
+\providecommand{\half}{}
+\renewcommand{\half}{\ensuremath{\frac{1}{2}}}
+\providecommand{\quart}{}
+\renewcommand{\quart}{\ensuremath{\frac{1}{4}}}
+\providecommand{\tquart}{}
+\renewcommand{\tquart}{\ensuremath{\frac{3}{4}}}
+%symbols
+\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt \hbox{\scriptsize.}\hbox{\scriptsize.}}}=}
+
+
+
+%define fnote for table footnotes
+\newcommand\fnote[1]{\captionsetup{font=footnotesize}\caption*{#1}}
+
+%define a hyphen for the maths environment
+\mathchardef\mhyphen="2D
+
+%get all the numbering to reset in the appendix, and switch to using letters for the highest section level
+\renewcommand\appendix{\par
+  \setcounter{section}{0}
+  \setcounter{subsection}{0}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \renewcommand\thesection{Appendix \Alph{section}}
+  \renewcommand\thefigure{\Alph{section}\arabic{figure}}
+  \renewcommand\thetable{\Alph{section}\arabic{table}}
+}
+
+%REDUCE HEIGHT OF FRAMETITLE TO MINIMUM
+% \setbeamertemplate{frametitle}{%
+%     \nointerlineskip%
+%     \begin{beamercolorbox}[wd=\paperwidth,ht=2ex,sep=.5ex,dp=0.6ex,left,leftskip=\the\dimexpr\beamer@leftmargin-1em\relax]{frametitle}
+%         \hspace*{1ex}\insertframetitle%
+%     \end{beamercolorbox}%
+% }
+
+
+%SHOW AUTHOR, TITLE, DATE IN FOOTER
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.5ex,dp=.5ex,sep=.5ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor%~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.5ex,dp=.5ex,sep=.5ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.5ex,dp=.5ex,sep=.5ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{4em}
+    \insertframenumber{} %/ \inserttotalframenumber
+    \hspace*{4ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+

@@ -1,0 +1,82 @@
+\ProvidesPackage{IFSstyle}
+
+
+
+%remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+%define colors and set beamer colors
+\definecolor{Snow2}{RGB}{238,233,233}
+\definecolor{Green}{rgb}{0.125,.5,0.25}
+\definecolor{standardgreen}{HTML}{248329}
+\definecolor{limegreen}{HTML}{7BAA1E}
+\definecolor{yellowgreen}{HTML}{B1BD05}
+\definecolor{yellow}{HTML}{D2D001}
+\definecolor{darkgrey}{HTML}{728896}
+
+\setbeamercolor{title}{fg=standardgreen}
+\setbeamerfont{title}{size=\huge}
+\setbeamercolor{frametitle}{fg=standardgreen}
+\setbeamercolor{structure}{fg=standardgreen}
+\setbeamercolor{footer}{bg=limegreen}
+\setbeamercolor{footer}{fg=limegreen}
+\setbeamerfont{frametitle}{size=\LARGE}
+
+
+%set background shading
+%\setbeamertemplate{background canvas}[vertical shading][top=Snow2,middle=white, bottom=white]
+
+%create the footer
+\setbeamertemplate{footline}{
+   \begin{beamercolorbox}[ht=4ex,leftskip=0.2cm,rightskip=.3cm]{author in head/foot}
+    \usebeamercolor{Green}
+    \vspace{0.1cm}
+    \color{darkgrey}{\tiny{\copyright Institute for Fiscal Studies}}
+    \vspace{0.1cm}
+    \hspace{7.5cm}\includegraphics[height=0.65cm]{IFSlogo4col.jpg}
+    \end{beamercolorbox}
+   }
+
+
+%margins
+\setbeamersize{text margin left = 2em}
+\setlength{\leftmargini}{1.05em}
+
+
+%itemized lists
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{itemize/enumerate body begin}{\vspace{4pt}}
+\setbeamertemplate{itemize/enumerate body end}{\vspace{4pt}}
+\setbeamertemplate{itemize/enumerate subbody begin}{\vspace{4pt}}
+\setbeamertemplate{itemize/enumerate subbody end}{\vspace{4pt}}
+
+
+%title page
+
+\setbeamertemplate{title page}
+{
+  \usebeamercolor{standardgreen}
+  \includegraphics[height=1.5cm]{IFSlogo4col.jpg}  \\
+  \vspace{0.2cm}
+  \hspace{1.3cm}\textcolor{standardgreen}{\rule{9.72cm}{0.5pt}}
+  \vspace{0.3cm}
+
+  \hspace{1.3cm}\parbox[t]{.75\paperwidth}{\raggedright \usebeamerfont{title} \inserttitle}
+
+  \vspace{0.2cm}
+
+  \hspace{1.3cm}\parbox[t]{.75\paperwidth}{\raggedright \color{standardgreen}{\insertsubtitle}}
+
+  \vspace{0.2cm}
+
+  \hspace{1.3cm}\parbox[t]{.75\paperwidth}{\raggedright \color{standardgreen}{\insertauthor}}
+
+  \bigskip
+
+  \hspace{1.3cm}\parbox[t]{.75\paperwidth}{\raggedright \color{standardgreen}{\insertinstitute}}
+
+  \vspace{0.2cm}
+
+	\hspace{1.3cm}\parbox[t]{.75\paperwidth}{\raggedright 	\color{standardgreen}{\insertdate}}
+
+  }
